@@ -1,7 +1,14 @@
 function App() {
+  let value;
+
+  function handleInputChange(event) {
+    value = event.target.value;
+    console.log(value);
+  }
   return (
-    <div className="App">
-      <h1>Social Media App</h1>
+    <div>
+      <input onChange={handleInputChange} />
+      {value}
     </div>
   );
 }
