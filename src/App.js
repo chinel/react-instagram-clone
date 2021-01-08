@@ -1,16 +1,6 @@
+import React from "react";
 function App() {
-  let value;
-
-  function handleInputChange(event) {
-    value = event.target.value;
-    console.log(value);
-  }
-  return (
-    <div>
-      <input onChange={handleInputChange} />
-      {value}
-    </div>
-  );
+  return <div>app</div>;
 }
 
 export default App;
