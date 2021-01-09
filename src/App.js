@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Login } from "./components";
+import { Header, Login, CreatePost } from "./components";
 
 function App() {
   const [user, setUser] = React.useState("");
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser} />
+      <CreatePost />
     </>
   );
 }
