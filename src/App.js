@@ -4,7 +4,7 @@ function App() {
   const [user, setUser] = React.useState("");
 
   if (!user) {
-    return <Login />;
+    return <Login setUser={setUser} />;
   }
 
   return <div>app</div>;
