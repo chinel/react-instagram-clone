@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./components/Login";
 function App() {
-  let user = "";
+  const [user, setUser] = React.useState("");
 
   if (!user) {
     return <Login />;
