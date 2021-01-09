@@ -1,5 +1,6 @@
 import React from "react";
-import Login from "./components/Login";
+import { Header, Login } from "./components";
+
 function App() {
   const [user, setUser] = React.useState("");
 
