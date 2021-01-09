@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Header user={user} />
+      <Header user={user} setUser={setUser} />
     </>
   );
 }

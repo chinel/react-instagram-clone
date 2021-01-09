@@ -1,9 +1,9 @@
 import React from "react";
 
-function Header({ user }) {
+function Header({ user, setUser }) {
   return (
     <div>
-      Welcome, {user}!<button>Logout</button>
+      Welcome, {user}!<button onClick={() => setUser("")}>Logout</button>
     </div>
   );
 }
