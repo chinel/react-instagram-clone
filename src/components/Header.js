@@ -1,10 +1,9 @@
 import React from "react";
 
-function Header() {
+function Header({ user }) {
   return (
     <div>
-      Welcome, user!
-      <button>Logout</button>
+      Welcome, {user}!<button>Logout</button>
     </div>
   );
 }
