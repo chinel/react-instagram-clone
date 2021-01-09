@@ -8,7 +8,11 @@ function App() {
     return <Login setUser={setUser} />;
   }
 
-  return <div>app</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
