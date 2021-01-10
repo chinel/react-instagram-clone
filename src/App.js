@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser} />
-      <CreatePost user={user} setPosts={setPosts} />
+      <CreatePost user={user} setPosts={setPosts} post={posts}/>
     </>
   );
 }
