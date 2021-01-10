@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser} />
-      <CreatePost user={user} setPosts={setPosts} post={posts} />
+      <CreatePost user={user} setPosts={setPosts} posts={posts} />
       {posts.map((post, id) => {
         return (
           <React.Fragment key={id}>
