@@ -3,6 +3,7 @@ import { Header, Login, CreatePost } from "./components";
 
 function App() {
   const [user, setUser] = React.useState("");
+  const [posts, setPosts] = React.useState([]);
 
   React.useEffect(() => {
     document.title = user ? `${user}'s Feed` : "Please login";
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser} />
-      <CreatePost />
+      <CreatePost user={user} setPosts={setPosts} />
     </>
   );
 }

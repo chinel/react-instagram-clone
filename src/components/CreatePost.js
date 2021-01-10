@@ -1,13 +1,18 @@
 import React from "react";
 
-function CreatePost() {
+function CreatePost({ user }) {
   const [content, setContent] = React.useState("");
   const [image, setImage] = React.useState(null);
+
+  function handleSubmit(event) {
+    event.preventDefault();  
+    const post = { content, image, user };
+  }
 
   return (
     <div>
       <h1>Create New Post</h1>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Add Post Content"
@@ -19,17 +24,8 @@ function CreatePost() {
         />
         <button type="submit">Submit Post</button>
       </form>
-      <p>{content}</p>
-      {image && (
-        <img
-          style={{ height: 100, width: 200, objectFit: "cover" }}
-          src={URL.createObjectURL(image)}
-          alt="post"
-        />
-      )}
     </div>
   );
 }
 
 export default CreatePost;
-  
