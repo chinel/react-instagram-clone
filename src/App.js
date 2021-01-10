@@ -17,21 +17,7 @@ function App() {
     <>
       <Header user={user} setUser={setUser} />
       <CreatePost user={user} setPosts={setPosts} posts={posts} />
-      {posts.map((post, id) => {
-        return (
-          <React.Fragment key={id}>
-            {post.image && (
-              <img
-                style={{ height: 100, width: 200, objectFit: "cover" }}
-                alt={post.content}
-                src={URL.createObjectURL(post.image)}
-              />
-            )}
-            <p>{post.content}</p>
-            <div>{post.user}</div>
-          </React.Fragment>
-        );
-      })}
+     
     </>
   );
 }
