@@ -14,7 +14,7 @@ function Post({ image, content, user }) {
             />
           )}
           <p>{content}</p>
-          <div>{user}</div>
+          <div style={{ color: currentUser === user && "green" }}>{user}</div>
         </>
       )}
     </UserContext.Consumer>
