@@ -1,7 +1,7 @@
 import React from "react";
 import { Header, Login, CreatePost, PostList } from "./components";
 
-const UserContext = React.createContext();
+export const UserContext = React.createContext();
 
 function App() {
   const [user, setUser] = React.useState("");
