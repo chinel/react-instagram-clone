@@ -1,8 +1,10 @@
 import React from "react";
+import { UserContext } from "../App";
 
 function Post({ image, content, user }) {
+  const currentUser = React.useContext(UserContext);
   return (
-    <React.Fragment>
+    <>
       {image && (
         <img
           style={{ height: 100, width: 200, objectFit: "cover" }}
@@ -11,8 +13,8 @@ function Post({ image, content, user }) {
         />
       )}
       <p>{content}</p>
-      <div>{user}</div>
-    </React.Fragment>
+      <div style={{ color: currentUser === user && "green" }}>{user}</div>
+    </>
   );
 }
 

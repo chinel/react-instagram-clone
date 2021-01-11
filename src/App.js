@@ -1,12 +1,11 @@
 import React from "react";
 import { Header, Login, CreatePost, PostList } from "./components";
 
-const functionCount = new Set();
+export const UserContext = React.createContext();
 
 function App() {
   const [user, setUser] = React.useState("");
   const [posts, setPosts] = React.useState([]);
-  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
     document.title = user ? `${user}'s Feed` : "Please login";
@@ -19,23 +18,16 @@ function App() {
     [posts]
   );
 
-  functionCount.add(handleAddPost);
-  console.log(functionCount);
-
   if (!user) {
     return <Login setUser={setUser} />;
   }
 
   return (
-    <>
+    <UserContext.Provider value={user}>
       <Header user={user} setUser={setUser} />
       <CreatePost user={user} handleAddPost={handleAddPost} />
       <PostList posts={posts} />
-      <button onClick={() => setCount((prevState) => prevState + 1)}>
-        {" "}
-        {count}
-      </button>
-    </>
+    </UserContext.Provider>
   );
 }
 
