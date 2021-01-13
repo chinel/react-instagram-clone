@@ -13,8 +13,9 @@ function Post({ image, content, user }) {
         />
       )}
       <p>{content}</p>
-      <div style={{ color: currentUser === user && "green" }}>{user}</div>
-      {currentUser && <button>Delete</button>}
+      <div style={{ color: currentUser === user && "green" }}>
+        {user} {currentUser === user && <button>Delete</button>}
+      </div>
     </>
   );
 }
