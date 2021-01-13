@@ -16,23 +16,25 @@ function App() {
     document.title = user ? `${user}'s Feed` : "Please login";
   }, [user]);
 
-  const handleAddPost = React.useCallback(
+  /* const handleAddPost = React.useCallback(
     (newPost) => {
-      setPosts([newPost, ...posts]);
+      setPosts([newPost, ...state.posts]);
     },
-    [posts]
-  );
+    [state.posts]
+  ); */
 
   if (!user) {
     return <Login setUser={setUser} />;
   }
 
   return (
-    <UserContext.Provider value={user}>
-      <Header user={user} setUser={setUser} />
-      <CreatePost user={user} handleAddPost={handleAddPost} />
-      <PostList posts={state.posts} />
-    </UserContext.Provider>
+    <PostContext.Provider value={{ state, dispatch }}>
+      <UserContext.Provider value={user}>
+        <Header user={user} setUser={setUser} />
+        <CreatePost user={user} /* handleAddPost={handleAddPost} */ />
+        <PostList posts={state.posts} />
+      </UserContext.Provider>
+    </PostContext.Provider>
   );
 }
 
