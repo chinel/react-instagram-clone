@@ -2,10 +2,13 @@ import React from "react";
 import { Header, Login, CreatePost, PostList } from "./components";
 
 export const UserContext = React.createContext();
+export const PostContext = React.createContext({
+  posts: [],
+});
 
 function App() {
   const [user, setUser] = React.useState("");
-  const [posts, setPosts] = React.useState([]);
+  //const [posts, setPosts] = React.useState([]);
 
   React.useEffect(() => {
     document.title = user ? `${user}'s Feed` : "Please login";
