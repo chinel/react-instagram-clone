@@ -1,5 +1,6 @@
 import React from "react";
 import { Header, Login, CreatePost, PostList } from "./components";
+import postReducer from "./reducer";
 
 export const UserContext = React.createContext();
 export const PostContext = React.createContext({
@@ -8,7 +9,7 @@ export const PostContext = React.createContext({
 
 function App() {
   const initialPostState = React.useContext(PostContext);
-  const [state, dispatch] = React.useReducer(() => {}, initialPostState);
+  const [state, dispatch] = React.useReducer(postReducer, initialPostState);
   const [user, setUser] = React.useState("");
   //const [posts, setPosts] = React.useState([]);
 
