@@ -7,6 +7,8 @@ export const PostContext = React.createContext({
 });
 
 function App() {
+  const initialPostState = React.useContext(PostContext);
+  const [state, dispatch] = React.useReducer(() => {}, initialPostState);
   const [user, setUser] = React.useState("");
   //const [posts, setPosts] = React.useState([]);
 
@@ -29,7 +31,7 @@ function App() {
     <UserContext.Provider value={user}>
       <Header user={user} setUser={setUser} />
       <CreatePost user={user} handleAddPost={handleAddPost} />
-      <PostList posts={posts} />
+      <PostList posts={state.posts} />
     </UserContext.Provider>
   );
 }
